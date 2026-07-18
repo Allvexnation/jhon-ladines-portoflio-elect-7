@@ -1,8 +1,5 @@
 import techLogos from '@/static/tech-logos.json';
-
-interface SkillsCardTechsProps {
-  isDarkMode: boolean;
-}
+import { SkillsCardTechsProps } from '@/interface/SkillsCardTechsProps';
 
 export function SkillsCardTechs({ isDarkMode }: SkillsCardTechsProps) {
   return techLogos.slice(0, 8).map((tech: any, index: number) => (

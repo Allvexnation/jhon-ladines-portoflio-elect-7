@@ -1,26 +1,141 @@
 {
   "en": {
-    "greeting": "Hi, I'm Jhon Ladines",
-    "location": "Based in Philippines",
-    "status": "Onsite",
-    "description": "Experienced and passionate Fullstack Developer with a strong focus on building efficient and scalable web applications. On the frontend, I work with React, JavaScript, and Tailwind CSS to create intuitive, responsive, and visually appealing user interfaces. On the backend, I leverage Express.js and Supabase to build robust, high-performance services and seamless data-driven experiences. I am a detail-oriented and collaborative developer, passionate about delivering clean, maintainable code and impactful digital solutions.",
-    "skillsTitle": "Skills",
-    "skillsDescription": "My professional skills.",
-    "featuredTitle": "Featured Sections",
-    "featuredDescription": "Explore everything I've crafted, contributed, and accomplished.",
-    "projectsTitle": "Projects Showcase",
-    "projectsDescription": "A selection of real apps built to solve real problems.",
-    "aboutTitle": "About Me",
-    "aboutDescription": "Who I am and what I do.",
-    "skillsToolsTitle": "Skills & Tools",
-    "skillsToolsDescription": "Covering mobile, web, AI, and UI/UX technologies.",
-    "tutorialsTitle": "Tutorials",
-    "tutorialsDescription": "Step-by-step guides and learning resources.",
-    "chatRoomTitle": "Chat Room",
-    "chatRoomDescription": "Open space to talk and collaborate.",
-    "chatRoomButton": "Realtime Chats",
-    "noMessages": "No messages yet...",
-    "servicesTitle": "Services",
-    "servicesDescription": "Building complete web, software, and design solutions."
+    "aboutIntro": {
+      "name": "Jhon Ladines",
+      "paragraphs": [
+        {
+          "text": "Thank you for visiting my personal website. I'm ",
+          "highlight": "Jhon Ladines",
+          "continuation": ", a student at the College for Research and Technology of Cabanatuan – San Jose Branch, pursuing a Bachelor of Science in Information Technology."
+        },
+        "I'm a Fullstack Developer driven by a passion for building impactful and efficient software solutions. My development stack includes modern frontend technologies such as React, JavaScript, and Tailwind CSS, along with backend development using Express.js and Supabase.",
+        "For software applications, I also develop desktop programs using Visual Basic and Java, utilizing NetBeans 8.2 or Visual Studio as my primary development environments.",
+        "I strive to create systems that are both user-friendly and high-performing, ensuring every layer—from the interface to the backend—is designed for clarity and efficiency. I'm a fast learner who adapts quickly to new technologies and thrives in collaborative, dynamic environments.",
+        "I believe that effective communication, teamwork, and a strong problem-solving mindset are key to success in software development. My experiences have helped me sharpen not only my technical and analytical skills, but also my leadership and collaboration abilities.",
+        "I'm always eager to learn, innovate, and contribute to projects that make a meaningful difference."
+      ],
+      "signature": {
+        "text": "Best regards,",
+        "logoDark": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcDxDKno6z6qkjGsawWz7P6XhThDxRynN8iBp640h4_dWhMIPA7GjNRE9&s=10",
+        "logoLight": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcDxDKno6z6qkjGsawWz7P6XhThDxRynN8iBp640h4_dWhMIPA7GjNRE9&s=10",
+        "name": "Jhon"
+      }
+    },
+    "careerData": {
+      "icon": "User",
+      "title": "Career",
+      "description": "My professional journey.",
+      "showResponsibilities": "Show responsibilities",
+      "hideResponsibilities": "Hide responsibilities",
+      "positions": [
+        {
+          "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpyWd-nDyYVOguJSH7DVck9cCeFuz-PsbsFRiuIlKXZ7StjbXIPrtNJ1a&s=10",
+          "link": "https://example.com",
+          "title": "Full Stack Developer",
+          "location": "San Jose City, Nueva Ecija, Philippines",
+          "duration": "October 2024 - January 2025",
+          "length": "3 months",
+          "level": "Entry Developer",
+          "type": "Onsite",
+          "responsibilities": [
+            "Developed and maintained frontend and backend services using Laravel PHP."
+          ]
+        }
+      ]
+    },
+    "educationData": {
+      "icon": "GraduationCap",
+      "title": "Education",
+      "description": "My educational journey.",
+      "schools": [
+        {
+          "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq1G973u7zTeXxM1sejysH8Dae3i0QKnvvanUCO_jiVA&s",
+          "name": "Doña Juana Chioco National High School",
+          "degree": "Junior High • Senior High (HUMSS)",
+          "duration": "2017 - 2024",
+          "location": "Nueva Ecija, Philippines",
+          "gwa": "90.1"
+        },
+        {
+          "logo": "https://res.cloudinary.com/dbob1wota/image/upload/synthwave/inquiries/6a5a323aaa0399974d0090d2/paymentProof/akfoc4weld4vqvun9kms.png",
+          "name": "College For Research and Technology",
+          "degree": "Bachelor's Degree • Information Technology",
+          "duration": "2024 - 2028",
+          "location": "Nueva Ecija, Philippines",
+          "gwa": "1.2"
+        }
+      ]
+    },
+    "pageHeader": {
+      "title": "About",
+      "description": "A brief introduction to who I am."
+    },
+    "specsData": {
+      "icon": "Monitor",
+      "title": "Specs",
+      "description": "My development hardware setup.",
+      "devices": [
+        {
+          "icon": "Laptop",
+          "name": "Laptop",
+          "specs": [
+            {
+              "label": "Processor",
+              "value": "Intel Core i7 7th Gen"
+            },
+            {
+              "label": "Graphics",
+              "value": "NVIDIA GeForce 930MX"
+            },
+            {
+              "label": "Memory (RAM)",
+              "value": "16GB DDR4"
+            },
+            {
+              "label": "Storage",
+              "value": "SSD 1TB"
+            },
+            {
+              "label": "Display",
+              "value": "Full HD (1920×1080)"
+            },
+            {
+              "label": "Operating System",
+              "value": "Windows 11 Pro"
+            }
+          ]
+        },
+        {
+          "icon": "Monitor",
+          "name": "PC",
+          "specs": [
+            {
+              "label": "Processor",
+              "value": "AMD A6-7480 Radeon R5, Compute Cores 2C+6G 3.50 GHz"
+            },
+            {
+              "label": "Memory (RAM)",
+              "value": "12GB DDR4"
+            },
+            {
+              "label": "Storage",
+              "value": "SSD 240GB"
+            },
+            {
+              "label": "Display",
+              "value": "Full HD (1920×1080)"
+            },
+            {
+              "label": "Operating System",
+              "value": "Windows 11 Pro"
+            },
+            {
+              "label": "Hard Drive Storage",
+              "value": "2.5TB"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

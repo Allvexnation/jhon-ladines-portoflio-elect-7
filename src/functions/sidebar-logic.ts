@@ -29,7 +29,7 @@ import sidebarConfig from '@/static/sidebar.json';
 // Constants
 export const PROFILE_IMAGE = 'https://res.cloudinary.com/djtsciuwn/image/upload/IMG-JHON_jxdvco.jpg';
 export const VERIFIED_BADGE =
-  'https://res.cloudinary.com/diddn2pzb/image/upload/v1760586574/download_8_f4xz89.png';
+  'https://res.cloudinary.com/dbob1wota/image/upload/verified_svtr7d.png';
 
 // Translation labels
 export const labels: Record<'en' | 'tl', Record<string, string>> = {

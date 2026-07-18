@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
 import { useThemeToggle } from '@/utils/theme-toggle';
 import { useLanguageToggle } from '@/utils/toggle-language';
 import { getThemeColors } from '@/functions/theme-utils';
-import { getTranslations } from '@/functions/translation-utils';
+import { getAboutTranslations } from '@/functions/translation-utils';
 
-export function useHomeLogic() {
-  const router = useRouter();
+export function useAboutLogic() {
   const { isDarkMode } = useThemeToggle();
   const { lang } = useLanguageToggle();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -14,7 +12,7 @@ export function useHomeLogic() {
   const [pageAnimated, setPageAnimated] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const t = getTranslations(lang);
+  const t = getAboutTranslations(lang);
 
   const themeColors = getThemeColors(isDarkMode);
 
@@ -37,7 +35,6 @@ export function useHomeLogic() {
   }, []);
 
   return {
-    router,
     isDarkMode,
     sectionRef,
     isMounted,

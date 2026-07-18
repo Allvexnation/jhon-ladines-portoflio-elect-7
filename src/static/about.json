@@ -1,0 +1,15 @@
+{
+  "images": {
+    "signature": {
+      "logoDark": "https://res.cloudinary.com/diddn2pzb/image/upload/jhon-logo-dark_ba9hgr.jpg",
+      "logoLight": "https://res.cloudinary.com/diddn2pzb/image/upload/jhon-logo-light_qnzrcv.jpg"
+    },
+    "career": {
+      "logo": "https://res.cloudinary.com/diddn2pzb/image/upload/465782370_387483194444236_5419424036759135181_n_p5sjwe.jpg"
+    },
+    "education": [
+      "https://res.cloudinary.com/diddn2pzb/image/upload/v1760193837/506399814_1251342193455465_8805647521841744613_n_w0qfbs.jpg",
+      "https://res.cloudinary.com/diddn2pzb/image/upload/crtlogo_qkwkzk_b0ig0w.png"
+    ]
+  }
+}

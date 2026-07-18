@@ -1,0 +1,26 @@
+{
+  "en": {
+    "greeting": "Hi, I'm Jhon Ladines",
+    "location": "Based in Philippines",
+    "status": "Onsite",
+    "description": "Experienced and passionate Fullstack Developer with a strong focus on building efficient and scalable web applications. On the frontend, I work with React, JavaScript, and Tailwind CSS to create intuitive, responsive, and visually appealing user interfaces. On the backend, I leverage Express.js and Supabase to build robust, high-performance services and seamless data-driven experiences. I am a detail-oriented and collaborative developer, passionate about delivering clean, maintainable code and impactful digital solutions.",
+    "skillsTitle": "Skills",
+    "skillsDescription": "My professional skills.",
+    "featuredTitle": "Featured Sections",
+    "featuredDescription": "Explore everything I've crafted, contributed, and accomplished.",
+    "projectsTitle": "Projects Showcase",
+    "projectsDescription": "A selection of real apps built to solve real problems.",
+    "aboutTitle": "About Me",
+    "aboutDescription": "Who I am and what I do.",
+    "skillsToolsTitle": "Skills & Tools",
+    "skillsToolsDescription": "Covering mobile, web, AI, and UI/UX technologies.",
+    "tutorialsTitle": "Tutorials",
+    "tutorialsDescription": "Step-by-step guides and learning resources.",
+    "chatRoomTitle": "Chat Room",
+    "chatRoomDescription": "Open space to talk and collaborate.",
+    "chatRoomButton": "Realtime Chats",
+    "noMessages": "No messages yet...",
+    "servicesTitle": "Services",
+    "servicesDescription": "Building complete web, software, and design solutions."
+  }
+}

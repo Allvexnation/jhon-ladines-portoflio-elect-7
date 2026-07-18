@@ -1,34 +1,141 @@
 {
   "tl": {
-    "greeting": "Kumusta, Ako si Jhon Ladines",
-    "location": "Nakabase sa Pilipinas",
-    "status": "Onsite",
-    "description": "Isa akong may karanasan at masigasig na Fullstack Developer na nakatuon sa pagbuo ng mahusay at scalable na web applications. Sa frontend, gumagamit ako ng React, JavaScript, at Tailwind CSS upang makalikha ng intuitive, responsive, at kaakit-akit na user interfaces. Sa backend, ginagamit ko ang Express.js at Supabase upang bumuo ng matatag, mabilis, at high-performance na mga serbisyo at seamless na data-driven experiences. Isa akong detail-oriented at collaborative na developer na masigasig sa paghahatid ng malinis, maintainable na code at makabuluhang digital solutions.",
-
-    "skillsTitle": "Mga Kasanayan",
-    "skillsDescription": "Aking mga propesyonal na kasanayan.",
-
-    "featuredTitle": "Mga Tampok na Seksyon",
-    "featuredDescription": "Tuklasin ang lahat ng aking mga nilikha, naambag, at mga natamo.",
-
-    "projectsTitle": "Mga Proyekto",
-    "projectsDescription": "Isang koleksyon ng mga totoong application na ginawa upang lutasin ang mga totoong problema.",
-
-    "aboutTitle": "Tungkol sa Akin",
-    "aboutDescription": "Kung sino ako at kung ano ang aking ginagawa.",
-
-    "skillsToolsTitle": "Mga Kasanayan at Kagamitan",
-    "skillsToolsDescription": "Sumasaklaw sa mobile, web, AI, at UI/UX na mga teknolohiya.",
-
-    "tutorialsTitle": "Mga Tutorial",
-    "tutorialsDescription": "Mga step-by-step na gabay at mga mapagkukunan sa pag-aaral.",
-
-    "chatRoomTitle": "Chat Room",
-    "chatRoomDescription": "Isang bukas na espasyo para makipag-usap at makipagtulungan.",
-    "chatRoomButton": "Realtime Chats",
-    "noMessages": "Wala pang mga mensahe...",
-
-    "servicesTitle": "Mga Serbisyo",
-    "servicesDescription": "Pagbuo ng kumpletong web, software, at mga solusyon sa disenyo."
+    "aboutIntro": {
+      "name": "Jhon Ladines",
+      "paragraphs": [
+        {
+          "text": "Salamat sa pagbisita sa aking personal na website. Ako si ",
+          "highlight": "Jhon Ladines",
+          "continuation": ", isang estudyante sa College for Research and Technology of Cabanatuan – San Jose Branch na kumukuha ng Bachelor of Science in Information Technology."
+        },
+        "Isa akong Fullstack Developer na may matinding hilig sa pagbuo ng makabuluhan at mahusay na mga software solution. Kabilang sa aking development stack ang mga modernong frontend technologies tulad ng React, JavaScript, at Tailwind CSS, kasama ang backend development gamit ang Express.js at Supabase.",
+        "Para sa mga software application, gumagawa rin ako ng mga desktop program gamit ang Visual Basic at Java, gamit ang NetBeans 8.2 at Visual Studio bilang aking pangunahing development environments.",
+        "Layunin kong makabuo ng mga sistemang parehong user-friendly at mataas ang performance, na tinitiyak na ang bawat bahagi—mula sa interface hanggang sa backend—ay dinisenyo para sa kalinawan at kahusayan. Mabilis akong matuto, madaling makaangkop sa mga bagong teknolohiya, at mahusay makipagtulungan sa mga dynamic na kapaligiran.",
+        "Naniniwala ako na ang epektibong komunikasyon, mahusay na teamwork, at matibay na problem-solving mindset ang susi sa tagumpay sa software development. Ang aking mga karanasan ay nakatulong upang higit pang mapahusay ang aking technical at analytical skills, gayundin ang aking leadership at collaboration abilities.",
+        "Palagi akong sabik na matuto, mag-innovate, at mag-ambag sa mga proyektong may tunay na positibong epekto."
+      ],
+      "signature": {
+        "text": "Lubos na gumagalang,",
+        "logoDark": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcDxDKno6z6qkjGsawWz7P6XhThDxRynN8iBp640h4_dWhMIPA7GjNRE9&s=10",
+        "logoLight": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcDxDKno6z6qkjGsawWz7P6XhThDxRynN8iBp640h4_dWhMIPA7GjNRE9&s=10",
+        "name": "Jhon"
+      }
+    },
+    "careerData": {
+      "icon": "User",
+      "title": "Karera",
+      "description": "Ang aking propesyonal na paglalakbay.",
+      "showResponsibilities": "Ipakita ang mga responsibilidad",
+      "hideResponsibilities": "Itago ang mga responsibilidad",
+      "positions": [
+        {
+          "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxpyWd-nDyYVOguJSH7DVck9cCeFuz-PsbsFRiuIlKXZ7StjbXIPrtNJ1a&s=10",
+          "link": "https://example.com",
+          "title": "Full Stack Developer",
+          "location": "Lungsod ng San Jose, Nueva Ecija, Pilipinas",
+          "duration": "Oktubre 2024 - Enero 2025",
+          "length": "3 buwan",
+          "level": "Entry Developer",
+          "type": "Onsite",
+          "responsibilities": [
+            "Bumuo at nag-maintain ng frontend at backend services gamit ang Laravel PHP."
+          ]
+        }
+      ]
+    },
+    "educationData": {
+      "icon": "GraduationCap",
+      "title": "Edukasyon",
+      "description": "Ang aking paglalakbay sa edukasyon.",
+      "schools": [
+        {
+          "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq1G973u7zTeXxM1sejysH8Dae3i0QKnvvanUCO_jiVA&s",
+          "name": "Doña Juana Chioco National High School",
+          "degree": "Junior High • Senior High (HUMSS)",
+          "duration": "2017 - 2024",
+          "location": "Nueva Ecija, Pilipinas",
+          "gwa": "90.1"
+        },
+        {
+          "logo": "https://res.cloudinary.com/dbob1wota/image/upload/synthwave/inquiries/6a5a323aaa0399974d0090d2/paymentProof/akfoc4weld4vqvun9kms.png",
+          "name": "College For Research and Technology",
+          "degree": "Bachelor's Degree • Information Technology",
+          "duration": "2024 - 2028",
+          "location": "Nueva Ecija, Pilipinas",
+          "gwa": "1.2"
+        }
+      ]
+    },
+    "pageHeader": {
+      "title": "Tungkol",
+      "description": "Maikling pagpapakilala tungkol sa akin."
+    },
+    "specsData": {
+      "icon": "Monitor",
+      "title": "Mga Specs",
+      "description": "Ang aking development hardware setup.",
+      "devices": [
+        {
+          "icon": "Laptop",
+          "name": "Laptop",
+          "specs": [
+            {
+              "label": "Processor",
+              "value": "Intel Core i7 7th Gen"
+            },
+            {
+              "label": "Graphics",
+              "value": "NVIDIA GeForce 930MX"
+            },
+            {
+              "label": "Memory (RAM)",
+              "value": "16GB DDR4"
+            },
+            {
+              "label": "Storage",
+              "value": "SSD 1TB"
+            },
+            {
+              "label": "Display",
+              "value": "Full HD (1920×1080)"
+            },
+            {
+              "label": "Operating System",
+              "value": "Windows 11 Pro"
+            }
+          ]
+        },
+        {
+          "icon": "Monitor",
+          "name": "PC",
+          "specs": [
+            {
+              "label": "Processor",
+              "value": "AMD A6-7480 Radeon R5, Compute Cores 2C+6G 3.50 GHz"
+            },
+            {
+              "label": "Memory (RAM)",
+              "value": "12GB DDR4"
+            },
+            {
+              "label": "Storage",
+              "value": "SSD 240GB"
+            },
+            {
+              "label": "Display",
+              "value": "Full HD (1920×1080)"
+            },
+            {
+              "label": "Operating System",
+              "value": "Windows 11 Pro"
+            },
+            {
+              "label": "Hard Drive Storage",
+              "value": "2.5TB"
+            }
+          ]
+        }
+      ]
+    }
   }
 }

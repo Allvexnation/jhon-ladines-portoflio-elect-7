@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CloudSun, CloudMoon, PanelTop, PanelLeft } from 'lucide-react';
+import { CloudSun, CloudMoon, PanelTop, PanelLeft, ArrowRight } from 'lucide-react';
 import type { SideBarProps } from '@/types/components';
 import { useSidebarLogic, PROFILE_IMAGE, VERIFIED_BADGE } from '@/functions/sidebar-logic';
 
@@ -402,8 +402,41 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                   whileTap={{ scale: 0.98 }}
                   style={{ willChange: 'transform, opacity' }}
                 >
+                  {/* Spinning dashed border on hover */}
+                  {activeTab !== item.id && (
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{
+                        position: 'absolute',
+                        top: 0, left: 0,
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '0.5rem',
+                        overflow: 'visible',
+                      }}
+                    >
+                      <rect
+                        x="1" y="1"
+                        width="calc(100% - 2px)" height="calc(100% - 2px)"
+                        rx="7" ry="7"
+                        fill="none"
+                        stroke={isDarkMode ? '#4b5563' : '#9ca3af'}
+                        strokeWidth="1.5"
+                        strokeDasharray="6 4"
+                        style={{
+                          animation: 'navDashSpin 4s linear infinite',
+                          transformOrigin: 'center',
+                          transformBox: 'fill-box',
+                        }}
+                      />
+                    </svg>
+                  )}
                   <item.icon className="w-5 h-5 transition-all duration-500 ease-out group-hover:-rotate-12 group-hover:scale-110" />
                   <span className="text-base font-medium">{item.text}</span>
+                  {activeTab === item.id && (
+                    <ArrowRight className="w-2.5 h-2.5 ml-auto" />
+                  )}
                 </motion.button>
               ))}
             </nav>
@@ -602,8 +635,40 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                     activeTab === item.id ? navActiveClass : navInactiveClass
                   }`}
                 >
+                  {/* Spinning dashed border on hover */}
+                  {activeTab !== item.id && (
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{
+                        position: 'absolute',
+                        top: 0, left: 0,
+                        width: '100%',
+                        height: '100%',
+                        overflow: 'visible',
+                      }}
+                    >
+                      <rect
+                        x="1" y="1"
+                        width="calc(100% - 2px)" height="calc(100% - 2px)"
+                        rx="7" ry="7"
+                        fill="none"
+                        stroke={isDarkMode ? '#4b5563' : '#9ca3af'}
+                        strokeWidth="1.5"
+                        strokeDasharray="6 4"
+                        style={{
+                          animation: 'navDashSpin 4s linear infinite',
+                          transformOrigin: 'center',
+                          transformBox: 'fill-box',
+                        }}
+                      />
+                    </svg>
+                  )}
                   <item.icon className="w-5 h-5 transition-all duration-500 ease-out group-hover:-rotate-12 group-hover:scale-110" />
                   <span className="text-base font-medium">{item.text}</span>
+                  {activeTab === item.id && (
+                    <ArrowRight className="w-5 h-5 ml-auto" />
+                  )}
                 </button>
               ))}
             </nav>

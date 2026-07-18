@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Gmail",
+    "handle": "jhonjaimeladines17@gmail.com",
+    "link": "mailto:jhonjaimeladines17@gmail.com",
+    "bgColor": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Send Email",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+  },
+  {
+    "title": "Facebook",
+    "handle": "jhon.ladines17",
+    "link": "https://www.facebook.com/jhon.ladines17",
+    "bgColor": "linear-gradient(135deg, #1877f2 0%, #0d5bb3 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Visit Profile",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1611606063065-ee7946a0737f?w=800&q=80"
+  },
+  {
+    "title": "Instagram",
+    "handle": "allvexnation1",
+    "link": "https://www.instagram.com/allvexnation1",
+    "bgColor": "linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Visit Profile",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"
+  },
+  {
+    "title": "GitHub",
+    "handle": "Allvexnation",
+    "link": "https://github.com/Allvexnation",
+    "bgColor": "linear-gradient(135deg, #333333 0%, #24292e 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Visit Profile",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&q=80"
+  },
+  {
+    "title": "Outlook",
+    "handle": "jhonjaimeladines17@outlook.com",
+    "link": "mailto:jhonjaimeladines17@outlook.com",
+    "bgColor": "linear-gradient(135deg, #0078d4 0%, #005a9e 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Send Email",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80"
+  },
+  {
+    "title": "TikTok",
+    "handle": "@yukiidofc",
+    "link": "https://www.tiktok.com/@yukiidofc",
+    "bgColor": "linear-gradient(135deg, #000000 0%, #ff0050 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Visit Profile",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80"
+  },
+  {
+    "title": "LinkedIn",
+    "handle": "Jhon Ladines",
+    "link": "https://www.linkedin.com/in/jhon-ladines-515594337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    "bgColor": "linear-gradient(135deg, #0077b5 0%, #005885 100%)",
+    "textColor": "#ffffff",
+    "buttonText": "Visit Profile",
+    "buttonBg": "rgba(255, 255, 255, 0.2)",
+    "backgroundImage": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80"
+  }
+]

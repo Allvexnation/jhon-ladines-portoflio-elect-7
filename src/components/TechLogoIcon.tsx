@@ -1,8 +1,5 @@
 import techLogos from '@/static/tech-logos.json';
-
-interface TechLogoIconProps {
-  isDarkMode: boolean;
-}
+import { TechLogoIconProps } from '@/interface/TechLogoIconProps';
 
 export function TechLogoIcon({ isDarkMode }: TechLogoIconProps) {
   return techLogos.map((tech: any) => ({

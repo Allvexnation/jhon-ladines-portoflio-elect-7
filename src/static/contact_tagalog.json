@@ -1,0 +1,37 @@
+{
+    "tl": {
+        "pageHeader": {
+            "title": "Ugnayan",
+            "description": "Makipag-ugnayan tayo"
+        },
+        "shareModal": {
+            "shareTitle": "Ibahagi",
+            "shareDescription": "Ibahagi ang link na ito sa iba",
+            "copyLink": "Kopyahin ang Link",
+            "copied": "Nakopya!",
+            "share": "Ibahagi"
+        },
+        "tabs": [
+            {
+                "id": "contact",
+                "label": "Ugnayan",
+                "title": "Magpadala ng mensahe sa akin"
+            },
+            {
+                "id": "social",
+                "label": "Social",
+                "title": "Hanapin ako sa social media"
+            }
+        ],
+        "contactForm": {
+            "namePlaceholder": "Pangalan",
+            "emailPlaceholder": "Email",
+            "subjectPlaceholder": "Paksa",
+            "messagePlaceholder": "Mensahe",
+            "sendButton": "Magpadala ng Email",
+            "sending": "Nagpapadala...",
+            "successMessage": "✓ Matagumpay na naipadala ang mensahe! Makikipag-ugnayan kami sa iyo sa lalong madaling panahon.",
+            "errorMessage": "✗ Nabigo ang pagpapadala ng mensahe. Mangyaring subukan muli o makipag-ugnayan sa amin nang direkta sa pamamagitan ng email."
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "en": {
+        "pageHeader": {
+            "title": "Contact",
+            "description": "Let's get in touch"
+        },
+        "shareModal": {
+            "shareTitle": "Share",
+            "shareDescription": "Share this link with others",
+            "copyLink": "Copy Link",
+            "copied": "Copied!",
+            "share": "Share"
+        },
+        "tabs": [
+            {
+                "id": "contact",
+                "label": "Contact",
+                "title": "Send me a message"
+            },
+            {
+                "id": "social",
+                "label": "Social",
+                "title": "Find me on social media"
+            }
+        ],
+        "contactForm": {
+            "namePlaceholder": "Name",
+            "emailPlaceholder": "Email",
+            "subjectPlaceholder": "Subject",
+            "messagePlaceholder": "Message",
+            "sendButton": "Send Email",
+            "sending": "Sending...",
+            "successMessage": "✓ Message sent successfully! We'll get back to you soon.",
+            "errorMessage": "✗ Failed to send message. Please try again or contact us directly via email."
+        }
+    }
+}

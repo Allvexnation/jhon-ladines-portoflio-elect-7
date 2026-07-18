@@ -1,0 +1,26 @@
+{
+    "tl": {
+        "greeting": "Kumusta, Ako si Jhon Ladines",
+        "location": "Nakabase sa Pilipinas",
+        "status": "Onsite",
+        "description": "Isa akong may karanasan at masigasig na Fullstack Developer na nakatuon sa pagbuo ng mahusay at scalable na web applications. Sa frontend, gumagamit ako ng React, JavaScript, at Tailwind CSS upang makalikha ng intuitive, responsive, at kaakit-akit na user interfaces. Sa backend, ginagamit ko ang Express.js at Supabase upang bumuo ng matatag, mabilis, at high-performance na mga serbisyo at seamless na data-driven experiences. Isa akong detail-oriented at collaborative na developer na masigasig sa paghahatid ng malinis, maintainable na code at makabuluhang digital solutions.",
+        "skillsTitle": "Mga Kasanayan",
+        "skillsDescription": "Aking mga propesyonal na kasanayan.",
+        "featuredTitle": "Mga Tampok na Seksyon",
+        "featuredDescription": "Tuklasin ang lahat ng aking mga nilikha, naambag, at mga natamo.",
+        "projectsTitle": "Mga Proyekto",
+        "projectsDescription": "Isang koleksyon ng mga totoong application na ginawa upang lutasin ang mga totoong problema.",
+        "aboutTitle": "Tungkol sa Akin",
+        "aboutDescription": "Kung sino ako at kung ano ang aking ginagawa.",
+        "skillsToolsTitle": "Mga Kasanayan at Kagamitan",
+        "skillsToolsDescription": "Sumasaklaw sa mobile, web, AI, at UI/UX na mga teknolohiya.",
+        "tutorialsTitle": "Mga Tutorial",
+        "tutorialsDescription": "Mga step-by-step na gabay at mga mapagkukunan sa pag-aaral.",
+        "chatRoomTitle": "Chat Room",
+        "chatRoomDescription": "Isang bukas na espasyo para makipag-usap at makipagtulungan.",
+        "chatRoomButton": "Realtime Chats",
+        "noMessages": "Wala pang mga mensahe...",
+        "servicesTitle": "Mga Serbisyo",
+        "servicesDescription": "Pagbuo ng kumpletong web, software, at mga solusyon sa disenyo."
+    }
+}
