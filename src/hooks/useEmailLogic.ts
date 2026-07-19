@@ -1,30 +1,10 @@
 import { useState } from 'react';
-
-export interface EmailFormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-export interface HandleSubmitParams {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  setIsSubmitting: (value: boolean) => void;
-  setSubmitStatus: (value: 'idle' | 'success' | 'error') => void;
-  setIsModalOpen: (value: boolean) => void;
-  setName: (value: string) => void;
-  setEmail: (value: string) => void;
-  setSubject: (value: string) => void;
-  setMessage: (value: string) => void;
-}
+import { EmailFormData, HandleSubmitParams } from '@/interface/EmailInterfaces';
 
 export const handleSubmit = async (e: React.FormEvent, params: HandleSubmitParams) => {
   e.preventDefault();
 
-  const { name, email, subject, message, setIsSubmitting, setSubmitStatus, setIsModalOpen, setName, setEmail, setSubject, setMessage } = params;
+  const { name, email, subject, message, phone, address, setIsSubmitting, setSubmitStatus, setIsModalOpen, setName, setEmail, setSubject, setMessage, setPhone, setAddress } = params;
 
   if (!name || !email || !subject || !message) {
     return;
@@ -44,6 +24,8 @@ export const handleSubmit = async (e: React.FormEvent, params: HandleSubmitParam
         email,
         subject,
         message,
+        phone,
+        address,
       }),
     });
 
@@ -60,6 +42,8 @@ export const handleSubmit = async (e: React.FormEvent, params: HandleSubmitParam
     setEmail('');
     setSubject('');
     setMessage('');
+    setPhone?.('');
+    setAddress?.('');
   } catch (error) {
     console.error('Error submitting form:', error);
     setIsSubmitting(false);
@@ -74,7 +58,7 @@ export function useEmailLogic() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const sendEmail = async (data: EmailFormData) => {
-    const { name, email, subject, message } = data;
+    const { name, email, subject, message, phone, address } = data;
 
     if (!name || !email || !subject || !message) {
       setErrorMessage('All fields are required');
@@ -97,6 +81,8 @@ export function useEmailLogic() {
           email,
           subject,
           message,
+          phone,
+          address,
         }),
       });
 

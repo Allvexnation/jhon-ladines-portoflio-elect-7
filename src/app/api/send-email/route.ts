@@ -4,7 +4,7 @@ import { generateEmailTemplate } from '@/templates/Emailtemplate';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const { name, email, subject, message, phone, address } = body;
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
     }
 
-    const htmlContent = generateEmailTemplate({ name, email, subject, message });
+    const htmlContent = generateEmailTemplate({ name, email, subject, message, phone, address });
 
     const emailPayload = {
       sender: {

@@ -34,6 +34,10 @@ export default function ContactPage() {
     setSubject,
     message,
     setMessage,
+    phone,
+    setPhone,
+    address,
+    setAddress,
     isSubmitting,
     submitStatus,
     isModalOpen,
@@ -170,6 +174,45 @@ export default function ContactPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t.contactForm.emailPlaceholder}
                     required
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium mb-1"
+                    style={{ color: isDarkMode ? '#ffffff' : '#000000' }}
+                  >
+                    Phone
+                  </label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    value={phone}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/[^0-9]/g, '');
+                      setPhone(value);
+                    }}
+                    placeholder="Phone (optional)"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="address"
+                    className="block text-sm font-medium mb-1"
+                    style={{ color: isDarkMode ? '#ffffff' : '#000000' }}
+                  >
+                    Address
+                  </label>
+                  <Input
+                    id="address"
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    placeholder="Address (optional)"
                   />
                 </div>
               </div>

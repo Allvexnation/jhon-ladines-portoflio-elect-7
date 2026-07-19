@@ -3,10 +3,12 @@ export interface EmailData {
   email: string;
   subject: string;
   message: string;
+  phone?: string;
+  address?: string;
 }
 
 export function generateEmailTemplate(data: EmailData): string {
-  const { name, email, subject, message } = data;
+  const { name, email, subject, message, phone, address } = data;
 
   return `
     <!DOCTYPE html>
@@ -56,6 +58,22 @@ export function generateEmailTemplate(data: EmailData): string {
                         <div style="font-size: 15px; color: #000; padding: 16px; background-color: #fafafa; border: 1px solid #eaeaea; border-radius: 6px;">${name} &lt;${email}&gt;</div>
                       </td>
                     </tr>
+                    ${phone ? `
+                    <tr>
+                      <td style="padding-bottom: 24px;">
+                        <div style="font-size: 12px; font-weight: 500; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Phone</div>
+                        <div style="font-size: 15px; color: #000; padding: 16px; background-color: #fafafa; border: 1px solid #eaeaea; border-radius: 6px;">${phone}</div>
+                      </td>
+                    </tr>
+                    ` : ''}
+                    ${address ? `
+                    <tr>
+                      <td style="padding-bottom: 24px;">
+                        <div style="font-size: 12px; font-weight: 500; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Address</div>
+                        <div style="font-size: 15px; color: #000; padding: 16px; background-color: #fafafa; border: 1px solid #eaeaea; border-radius: 6px;">${address}</div>
+                      </td>
+                    </tr>
+                    ` : ''}
                     <tr>
                       <td style="padding-bottom: 24px;">
                         <div style="font-size: 12px; font-weight: 500; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Subject</div>

@@ -1,7 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, ReactNode } from 'react';
-import { useEmailLogic, EmailFormData } from '@/hooks/useEmailLogic';
+import { useEmailLogic } from '@/hooks/useEmailLogic';
+import { EmailFormData } from '@/interface/EmailInterfaces';
 
 interface EmailContextType {
   isSending: boolean;

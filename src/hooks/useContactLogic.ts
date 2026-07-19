@@ -20,6 +20,8 @@ export function useContactLogic() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -91,6 +93,8 @@ export function useContactLogic() {
       email,
       subject,
       message,
+      phone,
+      address,
       setIsSubmitting,
       setSubmitStatus,
       setIsModalOpen,
@@ -98,6 +102,8 @@ export function useContactLogic() {
       setEmail,
       setSubject,
       setMessage,
+      setPhone,
+      setAddress,
     });
   };
 
@@ -125,6 +131,10 @@ export function useContactLogic() {
     setSubject,
     message,
     setMessage,
+    phone,
+    setPhone,
+    address,
+    setAddress,
     isSubmitting,
     submitStatus,
     isModalOpen,
