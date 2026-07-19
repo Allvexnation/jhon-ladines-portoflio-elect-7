@@ -6,7 +6,7 @@ import { getThemeColors } from '@/functions/ThemeFunction';
 import contactEnglish from '@/static/contact_english.json';
 import contactTagalog from '@/static/contact_tagalog.json';
 import { ContactTranslations } from '@/interface/ContactTranslations';
-import { handleSubmit } from './useEmailLogic';
+import { handleSubmit } from '@/hooks/useEmailLogic';
 
 export function useContactLogic() {
   const router = useRouter();
