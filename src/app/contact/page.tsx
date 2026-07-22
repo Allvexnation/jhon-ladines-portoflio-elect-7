@@ -66,8 +66,8 @@ export default function ContactPage() {
       initial="hidden"
       animate="visible"
     >
-      <div className="relative max-w-[1400px] mx-auto">
-        <motion.div className="mb-5" variants={itemVariants}>
+      <main className="relative max-w-[1400px] mx-auto">
+        <motion.header className="mb-5" variants={itemVariants}>
           <h2
             className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl font-bold mb-3"
             style={{ color: isDarkMode ? '#ffffff' : '#000000' }}
@@ -75,21 +75,21 @@ export default function ContactPage() {
             {t.pageHeader.title}
           </h2>
           <p style={{ color: isDarkMode ? '#9ca3af' : '#6b7280' }}>{t.pageHeader.description}</p>
-        </motion.div>
+        </motion.header>
 
-        <motion.div
+        <hr
           className="border-t mb-5 sm:mb-8 border-dashed"
           style={{ borderColor: themeColors.border }}
-          variants={itemVariants}
-        ></motion.div>
+        />
 
-        <motion.div className="flex gap-3 sm:gap-4 mb-6 sm:mb-8" variants={staggerVariants}>
+        <nav className="flex gap-3 sm:gap-4 mb-6 sm:mb-8" role="tablist">
           {t.tabs.map((tab: any) => (
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-medium text-sm transition-all duration-300"
-              variants={itemVariants}
+              role="tab"
+              aria-selected={activeTab === tab.id}
               style={
                 activeTab === tab.id
                   ? {
@@ -116,7 +116,7 @@ export default function ContactPage() {
               {tab.label}
             </motion.button>
           ))}
-        </motion.div>
+        </nav>
 
         {activeTab === 'social' && (
           <Social
@@ -133,7 +133,7 @@ export default function ContactPage() {
         )}
 
         {activeTab === 'contact' && (
-          <motion.div className="mt-0" variants={itemVariants}>
+          <motion.section className="mt-0" variants={itemVariants}>
             <h3
               className="text-lg sm:text-xl font-normal mb-4 sm:mb-6"
               style={{ color: isDarkMode ? '#ffffff' : '#000000' }}
@@ -142,7 +142,7 @@ export default function ContactPage() {
             </h3>
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div>
+                <div className="flex flex-col">
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium mb-1"
@@ -178,7 +178,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                <div>
+                <div className="flex flex-col">
                   <label
                     htmlFor="phone"
                     className="block text-sm font-medium mb-1"
@@ -199,7 +199,7 @@ export default function ContactPage() {
                     placeholder="Phone (optional)"
                   />
                 </div>
-                <div>
+                <div className="flex flex-col">
                   <label
                     htmlFor="address"
                     className="block text-sm font-medium mb-1"
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              <div>
+              <div className="flex flex-col">
                 <label
                   htmlFor="subject"
                   className="block text-sm font-medium mb-1"
@@ -233,7 +233,7 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              <div>
+              <div className="flex flex-col">
                 <label
                   htmlFor="message"
                   className="block text-sm font-medium mb-1"
@@ -281,9 +281,9 @@ export default function ContactPage() {
                 {isSubmitting ? t.contactForm.sending : t.contactForm.sendButton}
               </button>
             </form>
-          </motion.div>
+          </motion.section>
         )}
-      </div>
+      </main>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent>

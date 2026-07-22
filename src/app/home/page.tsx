@@ -40,8 +40,8 @@ export default function Home() {
         } as React.CSSProperties
       }
     >
-      <div className="max-w-[1400px] mx-auto">
-        <div className="mb-12 animate-fadeInUp animate-stagger-1">
+      <main className="max-w-[1400px] mx-auto">
+        <header className="mb-12 animate-fadeInUp animate-stagger-1">
           <h1
             className={`text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl font-bold mb-4 break-words`}
           >
@@ -59,46 +59,44 @@ export default function Home() {
             />
           </h1>
 
-          <div
-            className={`flex flex-wrap items-center gap-3 mb-4 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
+          <address
+            className={`flex flex-wrap items-center gap-3 mb-4 text-sm not-italic ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
           >
-            <div className="flex items-center gap-1.5">
-              <div
-                className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-gray-400' : 'bg-black'} rounded-full`}
+            <span className="flex items-center gap-1.5">
+              <span
+                className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-gray-400' : 'bg-black'} rounded-full inline-block`}
               />
               <span className="text-sm">{t.location}</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div
-                className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-gray-400' : 'bg-black'} rounded-full`}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span
+                className={`w-1.5 h-1.5 ${isDarkMode ? 'bg-gray-400' : 'bg-black'} rounded-full inline-block`}
               />
               <span className="text-sm">{t.status}</span>
-            </div>
-          </div>
+            </span>
+          </address>
 
           <p
             className={`text-sm sm:text-base ${isDarkMode ? 'text-gray-300' : 'text-gray-900'} leading-relaxed max-w-4xl mb-6`}
           >
             {t.description}
           </p>
-        </div>
+        </header>
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-2">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-12 animate-fadeInUp animate-stagger-2 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-3">
+        <section className="mb-12 animate-fadeInUp animate-stagger-3">
           <div className="flex flex-col gap-1.5 mb-5">
-            <div className="flex items-center gap-3">
+            <h2 className="flex items-center gap-3">
               <PiCodeBold
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${isDarkMode ? 'text-gray-400' : 'text-black'}`}
               />
-              <h2
+              <span
                 className={`text-base sm:text-lg font-bold leading-none ${isDarkMode ? 'text-white' : 'text-black'}`}
               >
                 {t.skillsTitle}
-              </h2>
-            </div>
+              </span>
+            </h2>
             <p
               className={`text-sm sm:text-base font-medium opacity-70 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
             >
@@ -112,24 +110,22 @@ export default function Home() {
             items={glassIconItems}
             className={isDarkMode ? 'text-white' : 'text-gray-900'}
           />
-        </div>
+        </section>
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-4">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-12 animate-fadeInUp animate-stagger-4 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-5">
+        <section className="mb-12 animate-fadeInUp animate-stagger-5">
           <div className="flex flex-col gap-1.5 mb-5">
-            <div className="flex items-center gap-3">
+            <h2 className="flex items-center gap-3">
               <PiCardsThreeBold
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${isDarkMode ? 'text-gray-400' : 'text-black'}`}
               />
-              <h2
+              <span
                 className={`text-base sm:text-lg font-bold leading-none ${isDarkMode ? 'text-white' : 'text-black'}`}
               >
                 Jhon's Favorite Subjects
-              </h2>
-            </div>
+              </span>
+            </h2>
             <p
               className={`text-sm sm:text-base font-medium opacity-70 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
             >
@@ -137,7 +133,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div
+          <article
             className="featured-card rounded-2xl p-1.5 transition-all relative"
             style={{ borderWidth: '3px', borderStyle: 'solid', borderColor: themeColors.border }}
           >
@@ -147,9 +143,9 @@ export default function Home() {
             >
               <Subjects isDarkMode={isDarkMode} />
             </div>
-          </div>
-        </div>
-      </div>
+          </article>
+        </section>
+      </main>
     </section>
   );
 }

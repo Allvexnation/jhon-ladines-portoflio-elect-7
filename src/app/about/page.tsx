@@ -4,6 +4,8 @@ import { User, GraduationCap, Laptop, Monitor } from 'lucide-react';
 import { useAboutLogic } from '@/hooks/useAboutLogic';
 import aboutEnglish from '@/static/about_english.json';
 import aboutTagalog from '@/static/about_tagalog.json';
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const getTranslatedContent = (lang: string = 'en'): any => {
   if (lang === 'tl') {
@@ -15,6 +17,34 @@ const getTranslatedContent = (lang: string = 'en'): any => {
 export default function About() {
   const { isDarkMode, sectionRef, isMounted, pageAnimated, themeColors } = useAboutLogic();
   const t = getTranslatedContent('en');
+  
+  const [cardSpotlights, setCardSpotlights] = useState<Record<number, { x: number; y: number; opacity: number }>>({});
+
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLElement>, index: number) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCardSpotlights(prev => ({
+      ...prev,
+      [index]: {
+        ...prev[index],
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      }
+    }));
+  };
+
+  const handleCardMouseEnter = (index: number) => {
+    setCardSpotlights(prev => ({
+      ...prev,
+      [index]: { ...prev[index], opacity: 0.6 }
+    }));
+  };
+
+  const handleCardMouseLeave = (index: number) => {
+    setCardSpotlights(prev => ({
+      ...prev,
+      [index]: { ...prev[index], opacity: 0 }
+    }));
+  };
 
   if (!isMounted) {
     return null;
@@ -31,8 +61,8 @@ export default function About() {
         } as React.CSSProperties
       }
     >
-      <div className="max-w-[1400px] mx-auto">
-        <div className="mb-6 animate-fadeInUp animate-stagger-1">
+      <main className="max-w-[1400px] mx-auto">
+        <header className="mb-6 animate-fadeInUp animate-stagger-1">
           <h1
             className={`text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-2xl font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-3`}
           >
@@ -41,13 +71,11 @@ export default function About() {
           <p className={`text-sm sm:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}>
             {t.pageHeader.description}
           </p>
-        </div>
+        </header>
 
-        <div className="mb-8 animate-fadeInUp animate-stagger-2">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-8 animate-fadeInUp animate-stagger-2 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-3">
+        <section className="mb-12 animate-fadeInUp animate-stagger-3">
           <div className="space-y-4">
             {t.aboutIntro.paragraphs.map((paragraph: any, index: number) => {
               if (typeof paragraph === 'object' && paragraph.text) {
@@ -75,7 +103,7 @@ export default function About() {
             })}
           </div>
 
-          <div className="mt-8 flex items-center gap-4">
+          <footer className="mt-8 flex items-center gap-4">
             <div className="flex-shrink-0">
               <img
                 src={
@@ -93,25 +121,23 @@ export default function About() {
                 {t.aboutIntro.signature.name}
               </p>
             </div>
-          </div>
-        </div>
+          </footer>
+        </section>
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-4">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-12 animate-fadeInUp animate-stagger-4 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-5">
+        <section className="mb-12 animate-fadeInUp animate-stagger-5">
           <div className="flex flex-col gap-1.5 mb-5">
-            <div className="flex items-center gap-3">
+            <h2 className="flex items-center gap-3">
               <User
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${isDarkMode ? 'text-gray-400' : 'text-black'}`}
               />
-              <h2
+              <span
                 className={`text-base sm:text-lg font-bold leading-none ${isDarkMode ? 'text-white' : 'text-black'}`}
               >
                 {t.careerData.title}
-              </h2>
-            </div>
+              </span>
+            </h2>
             <p
               className={`text-sm sm:text-base font-medium opacity-70 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
             >
@@ -121,27 +147,39 @@ export default function About() {
 
           <div className="space-y-4">
             {t.careerData.positions.map((position: any, index: number) => (
-              <div
+              <motion.article
                 key={index}
-                className="rounded-2xl p-1.5 transition-all"
+                onMouseMove={(e) => handleCardMouseMove(e, index)}
+                onMouseEnter={() => handleCardMouseEnter(index)}
+                onMouseLeave={() => handleCardMouseLeave(index)}
+                className="rounded-2xl p-1.5 transition-all relative overflow-hidden"
                 style={{
                   borderWidth: '3px',
                   borderStyle: 'solid',
                   borderColor: themeColors.border,
                 }}
+                whileHover={{ scale: 1.01, y: -2 }}
+                transition={{ duration: 0.15 }}
               >
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                  style={{
+                    opacity: cardSpotlights[index]?.opacity || 0,
+                    background: `radial-gradient(circle at ${cardSpotlights[index]?.x || 0}px ${cardSpotlights[index]?.y || 0}px, ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}, transparent 80%)`
+                  }}
+                />
                 <div
                   className="rounded-xl p-4 sm:p-6"
                   style={{ backgroundColor: themeColors.card }}
                 >
                   <div className="flex flex-col sm:flex-row items-start gap-4">
-                    <div className="flex-shrink-0">
+                    <figure className="flex-shrink-0">
                       <img
                         src={position.logo}
                         alt={position.title}
                         className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover"
                       />
-                    </div>
+                    </figure>
                     <div className="flex-1">
                       <h3
                         className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-1`}
@@ -192,27 +230,25 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.article>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-6">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-12 animate-fadeInUp animate-stagger-6 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-7">
+        <section className="mb-12 animate-fadeInUp animate-stagger-7">
           <div className="flex flex-col gap-1.5 mb-5">
-            <div className="flex items-center gap-3">
+            <h2 className="flex items-center gap-3">
               <GraduationCap
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${isDarkMode ? 'text-gray-400' : 'text-black'}`}
               />
-              <h2
+              <span
                 className={`text-base sm:text-lg font-bold leading-none ${isDarkMode ? 'text-white' : 'text-black'}`}
               >
                 {t.educationData.title}
-              </h2>
-            </div>
+              </span>
+            </h2>
             <p
               className={`text-sm sm:text-base font-medium opacity-70 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
             >
@@ -221,28 +257,42 @@ export default function About() {
           </div>
 
           <div className="space-y-4">
-            {t.educationData.schools.map((school: any, index: number) => (
-              <div
+            {t.educationData.schools.map((school: any, index: number) => {
+              const cardIndex = index + t.careerData.positions.length;
+              return (
+              <motion.article
                 key={index}
-                className="rounded-2xl p-1.5 transition-all"
+                onMouseMove={(e) => handleCardMouseMove(e, cardIndex)}
+                onMouseEnter={() => handleCardMouseEnter(cardIndex)}
+                onMouseLeave={() => handleCardMouseLeave(cardIndex)}
+                className="rounded-2xl p-1.5 transition-all relative overflow-hidden"
                 style={{
                   borderWidth: '3px',
                   borderStyle: 'solid',
                   borderColor: themeColors.border,
                 }}
+                whileHover={{ scale: 1.01, y: -2 }}
+                transition={{ duration: 0.15 }}
               >
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                  style={{
+                    opacity: cardSpotlights[cardIndex]?.opacity || 0,
+                    background: `radial-gradient(circle at ${cardSpotlights[cardIndex]?.x || 0}px ${cardSpotlights[cardIndex]?.y || 0}px, ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}, transparent 80%)`
+                  }}
+                />
                 <div
                   className="rounded-xl p-4 sm:p-6"
                   style={{ backgroundColor: themeColors.card }}
                 >
                   <div className="flex flex-col sm:flex-row items-start gap-4">
-                    <div className="flex-shrink-0">
+                    <figure className="flex-shrink-0">
                       <img
                         src={school.logo}
                         alt={school.name}
                         className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover"
                       />
-                    </div>
+                    </figure>
                     <div className="flex-1">
                       <h3
                         className={`text-base sm:text-lg font-bold ${isDarkMode ? 'text-white' : 'text-black'} mb-1`}
@@ -274,27 +324,26 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              </motion.article>
+              );
+            })}
           </div>
-        </div>
+        </section>
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-8">
-          <div className={`h-px ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-        </div>
+        <hr className={`mb-12 animate-fadeInUp animate-stagger-8 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`} />
 
-        <div className="mb-12 animate-fadeInUp animate-stagger-9">
+        <section className="mb-12 animate-fadeInUp animate-stagger-9">
           <div className="flex flex-col gap-1.5 mb-5">
-            <div className="flex items-center gap-3">
+            <h2 className="flex items-center gap-3">
               <Monitor
                 className={`w-5 h-5 sm:w-6 sm:h-6 ${isDarkMode ? 'text-gray-400' : 'text-black'}`}
               />
-              <h2
+              <span
                 className={`text-base sm:text-lg font-bold leading-none ${isDarkMode ? 'text-white' : 'text-black'}`}
               >
                 {t.specsData.title}
-              </h2>
-            </div>
+              </span>
+            </h2>
             <p
               className={`text-sm sm:text-base font-medium opacity-70 ${isDarkMode ? 'text-gray-400' : 'text-gray-800'}`}
             >
@@ -303,16 +352,30 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {t.specsData.devices.map((device: any, index: number) => (
-              <div
+            {t.specsData.devices.map((device: any, index: number) => {
+              const cardIndex = index + t.careerData.positions.length + t.educationData.schools.length;
+              return (
+              <motion.article
                 key={index}
-                className="rounded-2xl p-1.5 transition-all h-full"
+                onMouseMove={(e) => handleCardMouseMove(e, cardIndex)}
+                onMouseEnter={() => handleCardMouseEnter(cardIndex)}
+                onMouseLeave={() => handleCardMouseLeave(cardIndex)}
+                className="rounded-2xl p-1.5 transition-all h-full relative overflow-hidden"
                 style={{
                   borderWidth: '3px',
                   borderStyle: 'solid',
                   borderColor: themeColors.border,
                 }}
+                whileHover={{ scale: 1.01, y: -2 }}
+                transition={{ duration: 0.15 }}
               >
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                  style={{
+                    opacity: cardSpotlights[cardIndex]?.opacity || 0,
+                    background: `radial-gradient(circle at ${cardSpotlights[cardIndex]?.x || 0}px ${cardSpotlights[cardIndex]?.y || 0}px, ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}, transparent 80%)`
+                  }}
+                />
                 <div
                   className="rounded-xl p-4 sm:p-6 h-full flex flex-col"
                   style={{ backgroundColor: themeColors.card }}
@@ -350,11 +413,12 @@ export default function About() {
                     ))}
                   </div>
                 </div>
-              </div>
-            ))}
+              </motion.article>
+              );
+            })}
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </section>
   );
 }

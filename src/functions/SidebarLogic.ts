@@ -27,7 +27,7 @@ import tagalogLabels from '@/static/sidebar_tagalog.json';
 import sidebarConfig from '@/static/sidebar.json';
 
 export const PROFILE_IMAGE =
-  'https://res.cloudinary.com/djtsciuwn/image/upload/IMG-JHON_jxdvco.jpg';
+  'https://res.cloudinary.com/dbob1wota/image/upload/8847D2E8-EEA2-49D5-9A36-45DEB2C2974E_v9nalq.jpg';
 export const VERIFIED_BADGE =
   'https://res.cloudinary.com/dbob1wota/image/upload/verified_svtr7d.png';
 

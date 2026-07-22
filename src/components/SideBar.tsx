@@ -42,7 +42,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
 
   return (
     <>
-      <div
+      <header
         className={`lg:hidden fixed top-0 left-0 right-0 z-[100] border-b ${mobileTopBorderClass} backdrop-blur-sm bg-opacity-95`}
         style={{ backgroundColor: themeColors.mobile.background }}
       >
@@ -165,10 +165,10 @@ const SideBar: React.FC<SideBarProps> = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       <AnimatePresence>
-        <motion.div
+        <motion.nav
           className="lg:hidden fixed inset-0 z-[90]"
           initial={{ y: '-100%' }}
           animate={{ y: isOpen ? 0 : '-100%' }}
@@ -351,20 +351,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </div>
             </motion.div>
 
-            <motion.div
-              className={`w-full ${dividerClass} mb-4`}
-              initial={{ opacity: 0, scaleX: 0.8 }}
-              animate={{
-                opacity: isOpen ? 1 : 0,
-                scaleX: isOpen ? 1 : 0.8,
-              }}
-              transition={{
-                delay: isOpen ? 0.6 : 0,
-                duration: 0.35,
-                ease: 'easeInOut',
-              }}
-              style={{ willChange: 'transform, opacity' }}
-            ></motion.div>
+            <hr className={`w-full ${dividerClass} mb-4`} />
 
             <nav className="space-y-0 pr-1">
               {primaryNavItems.map((item, index) => (
@@ -428,7 +415,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               ))}
             </nav>
           </div>
-        </motion.div>
+        </motion.nav>
       </AnimatePresence>
 
       <AnimatePresence>
@@ -603,7 +590,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </div>
             </div>
 
-            <div className={`w-full ${dividerClass} mb-4`}></div>
+            <hr className={`w-full ${dividerClass} mb-4`} />
 
             <nav className="space-y-0 pr-1">
               {primaryNavItems.map((item) => (
@@ -653,16 +640,16 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               ))}
             </nav>
 
-            <div className={`w-full ${dividerClass} my-2`}></div>
+            <hr className={`w-full ${dividerClass} my-2`} />
 
-            <div className="pt-2 pb-6">
+            <footer className="pt-2 pb-6">
               <p className="text-[14px] text-gray-500 text-center leading-tight font-bold">
                 COPYRIGHT © 2026
               </p>
               <p className="text-[12px] text-gray-500 text-center leading-tight">
                 Jhon Ladines. All rights reserved.
               </p>
-            </div>
+            </footer>
           </div>
         </motion.aside>
       </AnimatePresence>
